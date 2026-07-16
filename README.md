@@ -9,13 +9,13 @@
 <br />
 
 <div align="center">
-  <img src="https://img.shields.io/github/languages/top/rafaelq80/aulas_java_t82?style=flat-square" />
-  <img src="https://img.shields.io/github/repo-size/rafaelq80/aulas_java_t82?style=flat-square" />
-  <img src="https://img.shields.io/github/languages/count/rafaelq80/aulas_java_t82?style=flat-square" />
-  <img src="https://img.shields.io/github/last-commit/rafaelq80/aulas_java_t82?style=flat-square" />
-  <img src="https://img.shields.io/github/issues/rafaelq80/aulas_java_t82?style=flat-square" />
-  <img src="https://img.shields.io/github/issues-pr/rafaelq80/aulas_java_t82?style=flat-square" />
-  <img src="https://img.shields.io/badge/status-construção-yellow" alt="Status: Em Construção">
+  <img src="https://img.shields.io/github/languages/top/marypraxedes/blogpessoal_spring?style=flat-square" />
+  <img src="https://img.shields.io/github/repo-size/marypraxedes/blogpessoal_spring?style=flat-square" />
+  <img src="https://img.shields.io/github/languages/count/marypraxedes/blogpessoal_spring?style=flat-square" />
+  <img src="https://img.shields.io/github/last-commit/marypraxedes/blogpessoal_spring?style=flat-square" />
+  <img src="https://img.shields.io/github/issues/marypraxedes/blogpessoal_spring?style=flat-square" />
+  <img src="https://img.shields.io/github/issues-pr/marypraxedes/blogpessoal_spring?style=flat-square" />
+  <img src="https://img.shields.io/badge/status-construção-yellow" alt="Status: Em Construção" />
 
 </div>
 
@@ -251,5 +251,5 @@ Este repositório é parte de um projeto educacional, mas contribuições são s
 
 <br />
 
-Desenvolvido por [**Maryane**](https://github.com/marypraxedes)
+Desenvolvido por [**Maryane Praxedes**](https://github.com/marypraxedes)
 Para dúvidas, sugestões ou colaborações, entre em contato via GitHub ou abra uma issue!
