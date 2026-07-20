@@ -20,6 +20,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.generation.blogpessoal.model.Postagem;
 import com.generation.blogpessoal.repository.PostagemRepository;
+import com.generation.blogpessoal.repository.TemaRepository;
 
 import jakarta.validation.Valid;
 
@@ -30,6 +31,9 @@ public class PostagemController {
 
 	@Autowired
 	private PostagemRepository postagemRepository;
+	
+	@Autowired
+	private TemaRepository temaRepository;
 	
 	@GetMapping
 	public ResponseEntity<List<Postagem>> getAll(){
@@ -55,19 +59,32 @@ public class PostagemController {
 	
 	@PostMapping
 	public ResponseEntity<Postagem> post(@Valid @RequestBody Postagem postagem){
-		return ResponseEntity.status(HttpStatus.CREATED)
-				.body(postagemRepository.save(postagem));
+		
+		if(temaRepository.existsById(postagem.getTema().getId())) {
+			
+			postagem.setId(null);
+			
+			return ResponseEntity.status(HttpStatus.CREATED)
+					.body(postagemRepository.save(postagem));
 		
 		//INSERT INTO tb_postagens(titulo, texto) VALUES(?, ?);
+		}
+		
+		throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "O tema não existe!", null);
 	}
 	
 	@PutMapping
 	public ResponseEntity<Postagem> put(@Valid @RequestBody Postagem postagem){
 		
-		if(postagemRepository.existsById(postagem.getId()))
-			return ResponseEntity.ok(postagemRepository.save(postagem));
+	
+		if(temaRepository.existsById(postagem.getTema().getId())) {
 		
-		//UPDATE tb_postagens SET titulo = ?, texto = ? WHERE id = ?;
+			if(postagemRepository.existsById(postagem.getId())) {
+				return ResponseEntity.ok(postagemRepository.save(postagem));
+		}
+		
+		throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "O tema não existe!", null);
+	}
 		
 		return ResponseEntity.notFound().build();
 	}
